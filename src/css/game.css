@@ -1,0 +1,238 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: grey  ;
+  background-image: url('../img/bg.jpg');
+}
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+.try {
+    position: absolute;
+    display: none;
+
+  background-color: hsla(120,100%,100%,0.7);
+   z-index: 1;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  top:40%;
+  -webkit-animation: animatezoom 2s;
+    animation: animatezoom 3s; 
+  }
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+.rd_centre_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 610px;
+}
+
+.game {
+  float: left;
+}
+
+.menu {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: lightgrey;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*flex-direction: column;*/
+}
+  .menu__panel {
+    position: relative;
+    width: 100%;
+    padding: .5em 1em;
+    text-align: center;
+    background-color: skyblue;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__panel1{
+  	position: relative;
+    width: 100%;
+    padding: .5em 1em;
+    text-align: center;
+    background-color:skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .menu__panel__block {
+      float: left;
+      width: 150px;
+      height: 100%;
+      
+    }
+      .menu__panel__block--header {
+        border-right: 1px solid #000000;
+      }
+
+    .menu__panel__element {
+    }
+      .menu__panel__element--score {
+        float: left;
+      }
+    .menu__panel__header {
+      font-size: 24pt;
+    }
+    .menu__panel__btn {
+      min-width: 80px;
+      margin-bottom: 5px;
+      padding: 6px;
+      font-size: 9pt;
+      background: #ecf0f1;
+      border: 1px solid black;
+      cursor: pointer;
+    }
+    .menu__panel__btn:hover {
+      background: #000000;
+      color: #ecf0f1;
+    }
+    .menu__panel__score {
+      font-size: 24pt;
+    }
+
+.sidebar {
+  width: 200px;
+  float: left;
+}
+  .sidebar__element {
+    margin: 1em 0;
+    padding: .3em .5em;
+  }
+    .sidebar__element__next {
+      width: 100px;
+      margin: 0 auto;
+    }
+      .sidebar__element__next__block {
+        float: left;
+        width: 30px;
+        height: 30px;
+        margin: 1px;
+      }
+      .sidebar__element__next__block--fill {
+        background: blue;
+      }
+    .sidebar__element__combo {
+      overflow: hidden;
+      width: 0;
+      height: 30px;
+      background: green;
+    }
+    .sidebar__element__score {
+      font-size: 36pt;
+      text-align: center;
+      text-decoration: underline;
+      font-weight: bolder;
+      color: green;
+    }
+    .sidebar__element__title {
+      font-size: 16pt;
+      line-height: 40pt;
+      text-align: center;
+      text-decoration: none;
+    }
+.container {}
+  .container__row {}
+  .container__block {
+    float: left;
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    background: skyblue;
+  }
+  .container__block--occupy {
+    background: black;
+  }
+  .container__block--occupying {
+    -webkit-animation-duration: .3s;
+    -webkit-animation-name: occupying;
+  }
+  .container__block--tetris--red {
+    background: #e74c3c;
+  }
+  .container__block--tetris--orange {
+    background: #f39c12;
+  }
+  .container__block--tetris--yellow {
+    background: #f1c40f;
+  }
+  .container__block--tetris--green {
+    background: #2ecc71;
+  }
+  .container__block--tetris--blue {
+    background: #3498db;
+  }
+  .container__block--tetris--purple {
+    background: #9b59b6;
+  }
+@-webkit-keyframes occupying {
+  from {
+    background: #7f8c8d;
+  }
+  to {
+    background: #000000;
+  }
+}
+.clearfix {
+  zoom:1;
+}
+.clearfix:before,
+.clearfix:after {
+  content:"";
+  display:table;
+}
+.clearfix:after {
+  clear:both;
+}
+
+.transible {
+  transition: all .1s;
+}
+.slow-transible {
+  transition: all 2s;
+}
+.display-none {
+  display: none;
+}
+.filter-cover {
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+.color-emphasis {
+  color: blue;
+}
+* {
+  margin:0;
+  padding:0;
+}
+* {
+  box-sizing: border-box;
+}
