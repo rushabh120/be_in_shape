@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Be In Shape</title>
+  <link rel="stylesheet" href="src/css/game.css">
+</head>
+
+<body>
+  <div id='start_menu' class='menu'>
+    <!-- <div class='menu__panel1'></div> -->
+    <div class='menu__panel'>
+      <div class='menu__panel__block menu__panel__block--header'>
+        <div class='menu__panel__element menu__panel__header'>Be<span class='color-emphasis'>In</span>Shape</div>
+      </div>&nbsp;
+      <div class='menu__panel__block menu__panel__block--tutorial'>
+        <div class='menu__panel__element menu__panel__tutorial'>
+          <div>Press <span class='color-emphasis'>R</span></div>
+          <div>For Reverse</div>
+        </div>
+      </div>
+      <div class='menu__panel__block'>
+        <button id='start-btn' class='menu__panel__element menu__panel__btn'>Start</button>
+        <button id='resume-btn' class='menu__panel__element menu__panel__btn'>Resume</button>
+        <button id='restart-btn' class='menu__panel__element menu__panel__btn'>Restart</button>
+      </div>
+    </div>
+    <!-- <div class='menu__panel1'></div> -->
+  </div>
+  <div class='rd_centre_box'>
+    <div class='main'>
+      <div class='game transible' id='game'>
+      </div>
+      <div class='sidebar'>
+        <div class=' sidebar__element'>
+          <div class='sidebar__element__title'>Next</div>
+          <div class='sidebar__element__next'>
+            <div class='sidebar__element__next__row clearfix'>
+              <div class='sidebar__element__next__block'></div>
+              <div class='sidebar__element__next__block'></div>
+              <div class='sidebar__element__next__block'></div>
+            </div>
+            <div class='sidebar__element--next__row clearfix'>
+              <div class='sidebar__element__next__block'></div>
+              <div class='sidebar__element__next__block'></div>
+              <div class='sidebar__element__next__block'></div>
+            </div>
+            <div class='sidebar__element--next__row clearfix'>
+              <div class='sidebar__element__next__block'></div>
+              <div class='sidebar__element__next__block'></div>
+              <div class='sidebar__element__next__block'></div>
+            </div>
+          </div>
+        </div>
+        <div class='sidebar__element'>
+          <div class='sidebar__element__title'>Power</div>
+          <div id='combo' class='sidebar__element__combo transible'></div>
+        </div>
+        <div class='sidebar__element'>
+          <div class='sidebar__element__title'>Score</div>
+          <div id='score' class='sidebar__element__score'>0</div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="try" id="no">
+    <span style="font-size: 300%;font-weight: bold;color: blue">Game Over</span>
+    <input type="text" id="finalscore" name="someInput" style="display: none;"></input>
+    <br>
+    <span onclick="document.getElementById('no').style.display='none'"  class="close">&times;</span>
+    <button onclick="myFunction1()">score</button>
+    <p id="demo"></p>
+  </div>
+  <script>
+  function myFunction1() {
+      var x = document.getElementById("finalscore").value;
+      document.getElementById("demo").innerHTML = x;
+  }
+  </script>
+
+  <script src='src/js/Combo.js'></script>
+  <script src='src/js/Menu.js'></script>
+  <script src='src/js/Score.js'></script>
+  <script src="src/js/jquery.js"></script>
+  <script src='src/js/jquery-buzz.js'></script>
+  <script src='src/js/Game.js'></script>
+  <script src='src/js/Container.js'></script>
+  <script src='src/js/Tetris.js'></script>
+  <script src='src/js/Control.js'></script>
+  <script src='src/js/tetris-sound.js'></script>
+  <script>
+  var game = new Game()
+  game.init(
+      new Container(),
+      new Control(),
+      new Menu(),
+      12,
+      19,
+      33, 
+      {
+        target: document.querySelector('#game'),
+        energy: document.querySelector('#combo'),
+        score: document.querySelector('#score'),
+        next: document.querySelectorAll('.sidebar__element__next__block'),
+        menu: document.querySelector('#start_menu')
+      }
+    )
+  </script>
+</html>
